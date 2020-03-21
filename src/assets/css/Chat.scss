@@ -1,0 +1,37 @@
+#Chat{
+    width:100%;
+    height:100%;
+    
+    /* 主体 */
+    .ChatMain{
+        width:80%;
+        height:230px;
+        padding:20px 0;
+        background:#fff;    
+        text-align: center;
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+        .headerImg{
+            margin:10px;
+            img{
+                border-radius:50%;
+            }
+        }         
+        p{
+            font-size: 18px;
+            text-align: center;
+            margin:10px 0;
+            span{
+                color:#00BC5B;
+                font-weight:bold;
+            }
+        }
+        p:nth-child(3){
+            margin-bottom:20px;
+        }
+    }
+}

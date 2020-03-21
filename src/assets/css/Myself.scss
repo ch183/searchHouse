@@ -1,0 +1,84 @@
+#Myself {
+
+    /* 头部 */
+    .header {
+        padding: 20px 10px;
+        color: #fff;
+        background: #5CCAFC;
+
+        /* 上方用户登录模块 */
+        .headerTop {
+            display: flex;
+            justify-content: space-between;
+
+            .headerImg {
+                width: 80px;
+            }
+
+            .login {
+                width: 100%;
+                margin-left: 10px;
+
+                .loginState {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .setting {
+                height: 30px;
+
+                img {
+                    width: 30px;
+                }
+            }
+
+        }
+        /* 下方数据 */
+        .headerBottom{
+            display:flex;
+            justify-content: space-between;
+            div:nth-child(2){
+                border-left:2px solid #fff;
+                border-right:2px solid #fff;
+            }
+            .headerBottomData{
+                width:100%;
+                p{
+                    font-size:18px;
+                    display:flex; 
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width:24px;
+                        margin-right:10px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* 下方设置 */
+    .single {
+        margin: 10px 0px;
+
+        div {
+            height: 40px;
+            padding: 0 10px;
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: 20px;
+                margin-right: 10px;
+            }
+
+            span:nth-child(2) {
+                font-weight: bold;
+            }
+        }
+    }
+}

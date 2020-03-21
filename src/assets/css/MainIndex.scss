@@ -1,0 +1,153 @@
+#MainIndex {
+
+    /* 头部搜索栏 */
+    .MainTop {
+        height: 40px;
+        color: #fff;
+        background: #00BC5B;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /* 当前城市 */
+        .myCity {
+            width: 20%;
+            text-align: center;
+        }
+
+        /* 搜索框 */
+        .am-list-item {
+            padding: 0;
+            border-radius: 20px;
+
+            .am-input-label {
+                width: 20px;
+            }
+        }
+
+        /* 右边选择城市 */
+        .checkCity {
+            width: 20%;
+            text-align: center;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    /* 轮播图 */
+
+
+
+    /* 导航图标 */
+    .headerNav {
+        padding: 5px;
+        background: #fff;
+        margin-bottom: 10px;
+
+        /* 上下部分 */
+        .headerNavTop,
+        .headerNavBottom {
+            display: flex;
+            justify-content: space-around;
+
+            div {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    width: 50px;
+                }
+            }
+        }
+    }
+
+    /* 房产全百科 */
+    .wiki {
+        padding: 5px 10px;
+        background: #fff;
+        margin-bottom: 10px;
+
+        .wikiTitle {
+            color: #B4B4B4;
+            font-size: 12px;
+
+            span {
+                color: #00BC5B;
+                font-size: 20px;
+                font-weight: bold;
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+
+        .wikiMain {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 40px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    /* 猜你喜欢 */
+    .guessLove {
+        padding: 10px;
+        background-color: #fff;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        .single {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                width: 100px;
+
+                img {
+                    width: 100px;
+                }
+            }
+
+            .middle {
+                width: 60%;
+
+                h3 {
+                    width: 100%;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                
+                p{
+                    color:#8E8E8E;
+                }
+                h3,p{
+                    margin:5px 0;
+                }
+            }
+
+            .right {
+                width:120px;
+                padding-top:10px;
+                font-size:16px;
+                font-weight: bold;
+                color:red;
+            }
+        }
+    }
+}
