@@ -45,22 +45,18 @@ export default class Login extends Component {
     changeUsername(e) {
         this.setState({
             username: e,
-            pwd: this.state.pwd,
-            code: this.state.code,
         })
     }
     changePwd(e) {
         this.setState({
-            username: this.state.username,
             pwd: e,
-            code: this.state.code,
         })
     }
     doLogin(){
         login(this.state.username,this.state.pwd).then(
             data=>{
                 console.log(data)
-                if(data.data=="OK"){
+                if(data.data=="ok"){
                     this.props.history.push("/Main")
                 }else{
                     alert("用户名或密码错误")

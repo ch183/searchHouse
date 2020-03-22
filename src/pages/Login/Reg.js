@@ -40,44 +40,37 @@ export default class Reg extends Component {
         this.props.history.push('/Login')
     }
     /* 双向绑定数据 */
-    changeUsername(e) {
+    changeUsername(val) {
         this.setState({
-            username: e,
-            pwd: this.state.pwd,
-            code: this.state.code,
-            checkCode: this.state.checkCode
+            username: val,
         })
     }
-    changePwd(e) {
+    changePwd(val) {
         this.setState({
-            username: this.state.username,
-            pwd: e,
-            code: this.state.code,
-            checkCode: this.state.checkCode
+            pwd: val,
         })
     }
-    changeCode(e) {
+    changeCode(val) {
         this.setState({
-            username: this.state.username,
-            pwd: this.state.pwd,
-            code: e,
-            checkCode: this.state.checkCode
+            code: val,
         })
     }
     /* 获取验证码 */
-    getCheckCode(e) {
+    getCheckCode() {
         getCode().then(data => {
             this.setState({ username: this.state.username, pwd: this.state.pwd, code: this.state.code, checkCode: data.data });
         })
     }
     /* 注册 */
     doReg() {
+        console.log(this.state.code ==this.state.checkCode)
         if (this.state.code == this.state.checkCode) {
             reg(this.state.username, this.state.pwd).then(data => {
-                if (data.data == "OK") {
+                if (data.data == "ok") {
                     this.props.history.push("/Login")
                 } else {
-                    alert("请确认用户名及密码是否符合格式,验证码是否正确!")
+                    alert("请确认用户名及密码是否符合格式,验证码是否")
+                    console.log(data)
                     return false
                 }
             })
