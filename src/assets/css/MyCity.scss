@@ -1,0 +1,17 @@
+#MyCity{
+    .backHome {
+        height: 40px;
+        font-weight: bold;
+        background: #fff;
+        display: flex;
+        position: relative;
+        z-index: 1;
+
+        span {
+            width: 4em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

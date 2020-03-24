@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import '../../assets/css/MainIndex.scss'
 import { Checkbox, List, InputItem, Button, WhiteSpace, WingBlank, Carousel } from 'antd-mobile';
-import { guessLove } from '../../api/apis'
-export default class MainIndex extends Component {
+import BScroll from "better-scroll"
+import { IP,guessLove } from '../../api/apis'
+import {connect} from "react-redux"
+
+class MainIndex extends Component {
     state = {
         myCity:"正在定位..",
         nav: [{ text: "新房", img: require("../../assets/imgs/House.png") }, { text: "新房", img: require("../../assets/imgs/House.png") }, { text: "新房", img: require("../../assets/imgs/House.png") }, { text: "新房", img: require("../../assets/imgs/House.png") },],
@@ -11,7 +14,13 @@ export default class MainIndex extends Component {
         data: ['1.jpg', '2.jpg', '3.jpg'],
     }
     componentDidMount() {
+         /* better-scroll */
+         let scroll = new BScroll(document.getElementById("MainIndex"),{
+            click:true,
+        })
+        /* 显示左上角定位 */
         this.showCityInfo()
+        /* 获取猜你喜欢数据 */
         guessLove().then(data => {
             this.setState({
                 guessLove: data.data
@@ -21,6 +30,7 @@ export default class MainIndex extends Component {
     render() {
         return (
             <div id="MainIndex">
+            <ul className="content">
                 {/* 头部搜索栏 */}
                 <div className="MainTop">
                     <div className="myCity" onClick={this.jump.bind(this,"/MyCity")}>{this.state.myCity}</div>
@@ -49,8 +59,6 @@ export default class MainIndex extends Component {
                         </a>
                     ))}
                 </Carousel>
-
-
                 {/* 导航图标 */}
                 <div className="headerNav">
                     <div className="headerNavTop">
@@ -73,9 +81,9 @@ export default class MainIndex extends Component {
                     <h2>猜你喜欢</h2>
                     <div className="guessLoveMain">
                         {this.state.guessLove.map((obj, index) => {
-                            return <div className="single" key={obj.id} onClick={this.getClick.bind(this, index)}>
+                            return <div className="single" key={obj.id} onClick={this.getClick.bind(this, obj)}>
                                 <div className="left">
-                                    {<img src={require('../../assets' + obj.imgs)} alt="预览" />}
+                                    {<img src={IP + obj.imgs} alt="预览" />}
                                 </div>
                                 <div className="middle">
                                     <h3>{obj.name}</h3>
@@ -89,6 +97,8 @@ export default class MainIndex extends Component {
                         })}
                     </div>
                 </div>
+                <div className="space"></div>
+            </ul>
             </div>
         )
     }
@@ -111,10 +121,16 @@ export default class MainIndex extends Component {
             }
         });
     }
-    getClick(index) {
-        console.log(this.state.guessLove[index])
+    getClick(obj) {
+        /* 向redux传数据 */
+        this.props.dispatch({
+            type:"seen",
+            obj
+        })
     }
     jump(hash){
         this.props.history.push(hash)
     }
+    
 }
+export default connect()(MainIndex)

@@ -1,0 +1,88 @@
+#CityList {
+    height: 100%;
+    background: #fff;
+
+    .backHome {
+        height: 40px;
+        font-weight: bold;
+        background: #fff;
+        display: flex;
+        position: relative;
+        z-index: 1;
+
+        span {
+            width: 4em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    /* 左侧选城市 */
+    .left {
+        width: 100%;
+        height: 100%;
+
+        /* 热门城市 */
+        .leftTop {
+            h2 {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .hotCity {
+                display: flex;
+                justify-content: space-around;
+
+                div {
+                    padding: 5px;
+                    text-align: center;
+                    border: 1px solid #ccc;
+                    background: #ccc;
+                }
+            }
+        }
+
+        .leftBottom {
+            padding-right: 40px;
+
+            .single {
+                h2 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+                .main {
+                    display: flex;
+                    justify-content: left;
+                    flex-wrap: wrap;
+
+                    div {
+                        width: 5em;
+                        padding: 5px;
+                        margin: 5px 5px;
+                        text-align: center;
+                        border: 1px solid #ccc;
+                        background: #ccc;
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        position: fixed;
+        top: 60px;
+        right: 10px;
+
+        p {
+            font-size: 16px;
+            margin: 6px 0;
+        }
+    }
+    /* 底部撑空间盒子 */
+    .space{
+        width:100%;
+        height:50px;
+    }
+}

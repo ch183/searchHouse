@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import "../../assets/css/MyCity.scss"
 export default class MyCity extends Component {
     state = {
         myCity: "正在定位",
@@ -10,12 +10,16 @@ export default class MyCity extends Component {
     render() {
         return (
             <div id="MyCity" style={{width:"100%",height:"100%"}}>
-                <p style={{position:"fixed",top:0,zIndex:1}}>当前定位城市:{this.state.myCity}</p>
+            <div className="backHome" ><span onClick={this.back.bind(this)}>&lt; 返回</span></div>            
+                <p style={{position:"relative",top:0,zIndex:1}}>当前定位城市:{this.state.myCity}</p>
                 <div id="city" style={{width:"100%",height:"100%"}}></div>
             </div>
         )
     }
-
+    /* 返回首页 */
+    back(){
+        this.props.history.push("/Main")
+    }
     //获取用户所在城市信息
     showCityInfo() {
         var that = this

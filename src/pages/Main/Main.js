@@ -29,7 +29,7 @@ export default class Main extends Component {
                 <Flex className="MainBottomNav">
                     {this.state.bottomList.map(obj => <Flex.Item key={obj.text} onClick={this.jump.bind(this, "/Main/" + obj.jump)}><img alt="icon" src={require('../../assets/imgs/' + obj.img)} />{obj.text}</Flex.Item>)}
                 </Flex>
-                <div className="space"></div>
+                
             </div>
         )
     }

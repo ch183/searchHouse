@@ -1,7 +1,8 @@
 import Axios from "axios"
 import Qs from "qs"
+export var IP = "http://192.168.3.5:80"
 let req = Axios.create({
-    baseURL:"http://localhost:80",
+    baseURL:IP,
     timeout:8000
 })
 /* 注册 */
