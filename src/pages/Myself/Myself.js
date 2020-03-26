@@ -3,12 +3,12 @@ import '../../assets/css/Myself.scss'
 import BScroll from "better-scroll"
 export default class Myself extends Component {
     state = {
-        list: [{
+        list: {
             list1: [{ text: '我的积分', img: require('../../assets/imgs/integral.png') }, { text: '我的订阅', img: require('../../assets/imgs/integral.png') }, { text: '微聊联系人', img: require('../../assets/imgs/integral.png') }],
             list2: [{ text: '房贷计算器', img: require('../../assets/imgs/integral.png') }, { text: '我的房子', img: require('../../assets/imgs/integral.png') }],
             list3: [{ text: '我的看房记录', img: require('../../assets/imgs/integral.png') }, { text: '我的问答', img: require('../../assets/imgs/integral.png') }],
             list4: [{ text: '设置', img: require('../../assets/imgs/integral.png') }, { text: '意见反馈', img: "" }]
-        }]
+        }
     }
     componentDidMount() {
         /* better-scroll */
@@ -48,22 +48,22 @@ export default class Myself extends Component {
                         </div>
                     </div>
                     <div className="single">
-                        {this.state.list[0].list1.map(obj => {
+                        {this.state.list.list1.map(obj => {
                             return <div key={obj.text}><span><img src={obj.img} alt="icon" />{obj.text}</span> <span>></span></div>
                         })}
                     </div>
                     <div className="single">
-                        {this.state.list[0].list2.map(obj => {
+                        {this.state.list.list2.map(obj => {
                             return <div key={obj.text}><span><img src={obj.img} alt="icon" />{obj.text}</span> <span>></span></div>
                         })}
                     </div>
                     <div className="single">
-                        {this.state.list[0].list3.map(obj => {
+                        {this.state.list.list3.map(obj => {
                             return <div key={obj.text}><span><img src={obj.img} alt="icon" />{obj.text}</span> <span>></span></div>
                         })}
                     </div>
                     <div className="single">
-                        {this.state.list[0].list4.map(obj => {
+                        {this.state.list.list4.map(obj => {
                             return <div key={obj.text}><span><img src={obj.img} />{obj.text}</span> <span>></span></div>
                         })}
                     </div>
